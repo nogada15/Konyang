@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mybatis 에서 sql 사용 -->
+<mapper namespace="sample">
+
+	<select id="popuplist" resultType="hashmap" parameterType="hashmap">
+		select bId, 
+			bTitle, 
+			bDate 
+		from
+			mvc_board
+
+	
+	</select>
+	
+	<select id="insertbener" parameterType="hashmap">
+		insert into 
+			bener_board_test 
+			(
+				bSite, 
+				bTime, 
+				bImage1, 
+				bLink1, 
+				bImage2, 
+				bLink2, 
+				bImage3, 
+				bLink3, 
+				bImage4, 
+				bLink4, 
+				bImage5, 
+				bLink5, 
+				bImage6, 
+				bLink6
+			) 
+			values 
+			(
+				#{bSite},
+				#{bTime},
+				'd',
+				'...',
+				'0',
+				#{bLink2},
+				'0',
+				#{bLink3},
+				'0',
+				#{bLink4},
+				'0',
+				#{bLink5},
+				'0',
+				#{bLink6}
+			)
+	</select>
+</mapper>
