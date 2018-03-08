@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="evaluation">
+
+ <typeAlias alias="evaluation" type="com.Kukdoadmin.model.Evaluation" />
+ 
+ <select id="evaluationList" resultClass="evaluation" parameterClass="evaluation">
+ 	select * from adminuser_board where bType='E'
+    	
+ </select>
+ 
+ <select id="evaluationListone" resultClass="evaluation" parameterClass="evaluation">
+ 	select * from adminuser_board where bId=#bId# and bType='E'
+    	
+ </select>
+ 
+ <select id="evaluationListserchId" resultClass="evaluation" parameterClass="evaluation">
+ 	select * from adminuser_board 
+ 	WHERE buserId like '%' + #keyword# + '%'
+ 	and bType='E'
+    	
+ </select>
+ 
+ <select id="evaluationListserchName" resultClass="evaluation" parameterClass="evaluation">
+ 	select * from adminuser_board 
+ 	WHERE bName like '%' + #keyword# + '%'
+ 	and bType='E'
+    	
+ </select>
+ 
+ <select id="evaluationListserchFeld" resultClass="evaluation" parameterClass="evaluation">
+ 	select * from adminuser_board
+ 	WHERE bDepartment like '%' + #keyword# + '%'
+ 	and bType='E'
+    	
+ </select>
+ 
+ <insert id="evaluationInsert" parameterClass="evaluation">
+ 	insert into 
+    		adminuser_board ( 
+    			buserId, 
+    			bPassword, 
+    			bName,
+    			bDepartment,
+    			bEmail,
+    			bTnumber,
+    			bTbusniess,
+    			bHire,
+    			bType
+    			
+    			
+    		) values ( 
+    			#buserId#, 
+    			#bPassword#, 
+    			#bName#,
+    			#bDepartment#,
+    			#bEmail#,
+    			#bTnumber#,
+    			#bTbusniess#,
+    			#bHire#,
+    			#bType#
+    			
+    		)
+ 
+ </insert>
+ 
+ <update id="evaluationModify" parameterClass="evaluation">
+    	update adminuser_board
+    	set 
+    		buserId = #buserId#, 
+    		bPassword = #bPassword#, 
+    		bName = #bName#,
+    		bDepartment = #bDepartment#,
+   			bEmail = #bEmail#,
+    		bTnumber = #bTnumber#,
+    		bTbusniess = #bTbusniess#
+    		
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    
+  <delete id="evaluationDelete" parameterClass="evaluation">
+    	delete from adminuser_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    
+    <update id="evaluationDeprivation" parameterClass="evaluation">
+    	update adminuser_board
+    	set
+    		ENABLED = 0
+    	where
+    		bId = #bId#
+    
+    </update>
+    
+    <update id="evaluationRecognition" parameterClass="evaluation">
+    update adminuser_board
+    	set
+    		ENABLED = 1
+    	where
+    		bId = #bId#
+    
+    </update>
+ 
+ </sqlMap>

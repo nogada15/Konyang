@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="etronotice">
+
+ <typeAlias alias="etronotice" type="com.Kukdoadmin.model.Etronotice" />
+ 
+ <select id="etronoticeList" resultClass="etronotice" parameterClass="etronotice">
+ 	select * from Etronotice_board
+    	
+ </select>
+ 
+ <select id="etronoticeListone" resultClass="etronotice" parameterClass="etronotice">
+ 	select * from Etronotice_board where bId=#bId#
+    	
+ </select>
+ 
+ <select id="etronoticeListserch" resultClass="etronotice" parameterClass="etronotice">
+ 	select * from Etronotice_board where bSite like '%' + #keyword# + '%'
+    	
+ </select>
+ 
+ <insert id="etronoticeInsert" parameterClass="etronotice">
+ 	insert into 
+    		Etronotice_board ( 
+    			bSite, 
+    			bTitle, 
+    			bFileName,
+    			bExposure  
+    			
+    		) values ( 
+    			#bSite#, 
+    			#bTitle#,
+    			#bFileName#,
+    			#bExposure#
+    		)
+ 
+ </insert>
+ 
+ <update id="etronoticeModify" parameterClass="etronotice">
+    	update Etronotice_board
+    	set 
+    		bSite = #bSite#, 
+    		bTitle = #bTitle#, 
+    		bFileName = #bFileName#,
+    		bExposure = #bExposure#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    
+  <delete id="etronoticeDelete" parameterClass="etronotice">
+    	delete from Etronotice_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    
+ 
+ </sqlMap>

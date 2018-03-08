@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="lt">
+
+	<typeAlias alias="LanguageTest" 		type="com.Kukdoadmin.model.LanguageTest" />
+
+	<select id="getAllLanguageTests" resultClass="LanguageTest">
+		SELECT pk AS pk , apk AS apk , name AS name, language1 AS language1 , testname1 AS testname1 , testday1 AS testday1 , testscore1 AS testscore1 , testbbday1 AS testbbday1 , level1 AS level1 , language2 AS language2 , testname2 AS testname2 , testday2 AS testday2 , testscore2 AS testscore2 , testbbday2 AS testbbday2 , level2 AS level2 , language3 AS language3 , testname3 AS testname3 , testday3 AS testday3 , testscore3 AS testscore3 , testbbday3 AS testbbday3 , level3 AS level3 , language4 AS language4 , testname4 AS testname4 , testday4 AS testday4 , testscore4 AS testscore4 , testbbday4 AS testbbday4 , level4 AS level4 , language5 AS language5 , testname5 AS testname5 , testday5 AS testday5 , testscore5 AS testscore5 , testbbday5 AS testbbday5 , level5 AS level5 , count AS count, testbbmonth1 AS testbbmonth1, testbbmonth2 AS testbbmonth2, testbbmonth3 AS testbbmonth3, testbbmonth4 AS testbbmonth4, testbbmonth5 AS testbbmonth5, testbbyear1 AS testbbyear1, testbbyear2 AS testbbyear2, testbbyear3 AS testbbyear3, testbbyear4 AS testbbyear4, testbbyear5 AS testbbyear5, testyear1 AS testyear1, testyear2 AS testyear2, testyear3 AS testyear3, testyear4 AS testyear4,testyear5 AS testyear5, testmonth1 AS testmonth1, testmonth2 AS testmonth2, testmonth3 AS testmonth3, testmonth4 AS testmonth4, testmonth5 AS testmonth5 FROM languagetest
+	</select>
+	
+	<select id="getLanguageTest" resultClass="LanguageTest">
+		SELECT apk AS apk , name AS name, language1 AS language1 , testname1 AS testname1 , testday1 AS testday1 , testscore1 AS testscore1 , testbbday1 AS testbbday1 , level1 AS level1 , language2 AS language2 , testname2 AS testname2 , testday2 AS testday2 , testscore2 AS testscore2 , testbbday2 AS testbbday2 , level2 AS level2 , language3 AS language3 , testname3 AS testname3 , testday3 AS testday3 , testscore3 AS testscore3 , testbbday3 AS testbbday3 , level3 AS level3 , language4 AS language4 , testname4 AS testname4 , testday4 AS testday4 , testscore4 AS testscore4 , testbbday4 AS testbbday4 , level4 AS level4 , language5 AS language5 , testname5 AS testname5 , testday5 AS testday5 , testscore5 AS testscore5 , testbbday5 AS testbbday5 , level5 AS level5 , count AS count, testbbmonth1 AS testbbmonth1, testbbmonth2 AS testbbmonth2, testbbmonth3 AS testbbmonth3, testbbmonth4 AS testbbmonth4, testbbmonth5 AS testbbmonth5, testbbyear1 AS testbbyear1, testbbyear2 AS testbbyear2, testbbyear3 AS testbbyear3, testbbyear4 AS testbbyear4, testbbyear5 AS testbbyear5 FROM languagetest WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertLanguageTest" parameterClass="LanguageTest">
+		INSERT INTO languagetest (pk , apk , name , language1 , testname1 , testday1 , testscore1 , testbbday1 , level1 , language2 , testname2 , testday2 , testscore2 , testbbday2 , level2 , language3 , testname3 , testday3 , testscore3 , testbbday3 , level3 , language4 , testname4 , testday4 , testscore4 , testbbday4 , level4 , language5 , testname5 , testday5 , testscore5 , testbbday5 , level5 , count, testbbmonth1, testbbmonth2, testbbmonth3, testbbmonth4, testbbmonth5, testbbyear1, testbbyear2, testbbyear3, testbbyear4, testbbyear5, testyear1, testyear2, testyear3, testyear4, testyear5, testmonth1, testmonth2, testmonth3, testmonth4, testmonth5) VALUES (#pk#, #apk#, #name#, #language1#, #testname1#, #testday1#, #testscore1#, #testbbday1#, #level1#, #language2#, #testname2#, #testday2#, #testscore2#, #testbbday2#, #level2#, #language3#, #testname3#, #testday3#, #testscore3#, #testbbday3#, #level3#, #language4#, #testname4#, #testday4#, #testscore4#, #testbbday4#, #level4#, #language5#, #testname5#, #testday5#, #testscore5#, #testbbday5#, #level5#, #count#, #testbbmonth1#, #testbbmonth2#, #testbbmonth3#, #testbbmonth4#, #testbbmonth5#, #testbbyear1#, #testbbyear2#, #testbbyear3#, #testbbyear4#, #testbbyear5#, #testyear1#, #testyear2#, #testyear3#, #testyear4#, #testyear5#, #testmonth1#, #testmonth2#, #testmonth3#, #testmonth4#, #testmonth5#)
+	</insert>
+	
+	<update id="updateLanguageTest">
+		UPDATE languagetest 
+		set
+			pk = #pk#,
+			apk = #apk#,
+			name = #name#,
+			language1 = #language1#,
+			testname1 = #testname1#,
+			testday1 = #testday1#,
+			testscore1 = #testscore1#,
+			testbbyear1 = #testbbyear1#,
+			level1 = #level1#,
+			language2 = #language2#,
+			testname2 = #testname2#,
+			testday2 = #testday2#,
+			testscore2 = #testscore2#,
+			testbbyear2 = #testbbyear2#,
+			level2 = #level2#,
+			language3 = #language3#,
+			testname3 = #testname3#,
+			testday3 = #testday3#,
+			testscore3 = #testscore3#,
+			testbbyear3 = #testbbyear3#,
+			level3 = #level3#,
+			language4 = #language4#,
+			testname4 = #testname4#,
+			testday4 = #testday4#,
+			testscore4 = #testscore4#,
+			testbbyear4 = #testbbyear4#,
+			level4 = #level4#,
+			language5 = #language5#,
+			testname5 = #testname5#,
+			testday5 = #testday5#,
+			testscore5 = #testscore5#,
+			testbbyear5 = #testbbyear5#,
+			level5 = #level5#,
+			count = #count#,
+			testyear1 = #testyear1#,
+			testmonth1 = #testmonth1#,
+			testyear2 = #testyear2#,
+			testmonth2 = #testmonth2#,
+			testyear3 = #testyear3#,
+			testmonth3 = #testmonth3#,
+			testyear4 = #testyear4#,
+			testmonth4 = #testmonth4#,
+			testyear5 = #testyear5#,
+			testmonth5 = #testmonth5#,
+			testbbmonth1 = #testbbmonth1#,
+			testbbday1 = #testbbday1#,
+			testbbmonth2 = #testbbmonth2#,
+			testbbday2 = #testbbday2#,
+			testbbmonth3 = #testbbmonth3#,
+			testbbday3 = #testbbday3#,
+			testbbmonth4 = #testbbmonth4#,
+			testbbday4 = #testbbday4#,
+			testbbmonth5 = #testbbmonth5#,
+			testbbday5 = #testbbday5#	
+		WHERE
+			pk = #pk#
+	</update>
+	
+	<delete id="LanguageTestDel" parameterClass="LanguageTest">
+    	delete from languagetest 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

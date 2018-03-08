@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+    <sqlMapConfig>
+    <settings useStatementNamespaces="true" lazyLoadingEnabled="true" enhancementEnabled="false"/>
+    <sqlMap resource="com/Kukdoadmin/sql/mainBener.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/Popup.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/Etronotice.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/Manager.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/Langtest.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/Hire.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/HireFAQ.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/News.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/PR.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/KdoInterview.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/Admin.xml"/>
+    <sqlMap resource="com/Kukdoadmin/sql/Evaluation.xml"/>
+    
+
+	<sqlMap resource="com/Kukdoadmin/sql/EmploySqlMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/ApplySqlMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/RegMakeSqlMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/RegMake2SqlMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/AcademicMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/CareerPartMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/FamilyMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/LanguageTestMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/LiecenseMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/MilitaryMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/OverSeaMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/SelfMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/AddressMapper.xml"/>
+	<sqlMap resource="com/Kukdoadmin/sql/SchoolMapper.xml"/>
+	 
+    </sqlMapConfig>

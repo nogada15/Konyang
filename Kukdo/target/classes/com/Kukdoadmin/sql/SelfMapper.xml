@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="self">
+
+	<typeAlias alias="Self" 		type="com.Kukdoadmin.model.Self" />
+
+	<select id="getAllSelfs" resultClass="Self">
+		SELECT apk AS apk, self1 AS self1, self2 AS self2, self3 AS self3, self4 AS self4, self5 AS self5, self6 AS self6, self7 AS self7 FROM self
+	</select>
+	
+	<select id="getSelf" resultClass="Self">
+		SELECT apk AS apk, self1 AS self1, self2 AS self2, self3 AS self3, self4 AS self4, self5 AS self5, self6 AS self6, self7 AS self7 FROM self WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertSelf" parameterClass="Self">
+		INSERT INTO self (pk, apk, self1, self2, self3, self4, self5, self6, self7) VALUES (#pk#, #apk#, #self1#, #self2#, #self3#, #self4#, #self5#, #self6#, #self7#)
+	</insert>
+	
+	
+	<update id="updateSelf">
+		UPDATE self
+		set
+			pk = #pk#,
+			apk = #apk#,
+			self1 = #self1#,
+			self2 = #self2#,
+			self3 = #self3#,
+			self4 = #self4#,
+			self5 = #self5#,
+			self6 = #self6#,
+			self7 = #self7#
+		WHERE
+			pk = #pk#		
+	</update>
+	
+	<delete id="SelfDel" parameterClass="Self">
+    	delete from self 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

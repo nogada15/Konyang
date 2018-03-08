@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="pr">
+    
+    <typeAlias alias="pr" type="com.Kukdoadmin.model.PR" />
+    
+    <select id="prList" resultClass="pr" parameterClass="pr">
+    	select 
+    		*
+    	from 
+    		PR_board 
+    	
+    </select>
+    
+    <select id="prListone" resultClass="pr" parameterClass="pr">
+    	select 
+    		*
+    	from 
+    		PR_board 
+    	where
+    		bId=#bId#
+    	
+    </select>
+    
+    <select id="prListserch" resultClass="pr" parameterClass="pr">
+    	select 
+    		*
+    	from 
+    		PR_board 
+    	WHERE
+    	 bTitle like '%' + #keyword# + '%'
+            and bSite like '%' + #searchOption# + '%'
+    	
+    </select>
+    
+    <insert id="prInsert" parameterClass="pr">
+    	insert into PR_board  (
+    		bSite,
+    		bTitle,
+    		bImage,
+    		bFile,
+    		bExposure,
+    		bContent
+    	) values (
+    		#bSite#,
+    		#bTitle#,
+    		#bImage#,
+    		#bFile#,
+    		#bExposure#,
+    		#bContent#
+    	)
+    </insert>
+    
+    <update id="prModify" parameterClass="pr">
+    	update PR_board
+    	set 
+    		bSite = #bSite#,
+    		bTitle = #bTitle#,
+    		bImage = #bImage#,
+    		bFile = #bFile#,
+    		bExposure = #bExposure#,
+    		bContent = #bContent#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    <delete id="prDelete" parameterClass="pr">
+    	delete from PR_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    </sqlMap>

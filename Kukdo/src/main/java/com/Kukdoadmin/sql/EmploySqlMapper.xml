@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="employ">
+
+	<typeAlias alias="EmployModel" 		type="com.Kukdoadmin.model.EmployModel" />
+
+	<select id="getAllEmploys" resultClass="EmployModel">
+		SELECT * FROM employ
+	</select>
+	
+	<select id="getEmploys" resultClass="EmployModel">
+		SELECT * From employ WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertEmploy" parameterClass="EmployModel">
+		INSERT INTO employ (applysession, title, state, exposeYN, priorityexpose, startterm, endterm, applycareer, applynewcomer, applyintern, judgemen, contents, paperpasser, interviewpasser, finalpasser) VALUES (#applysession#, #title#, #state#, #exposeYN#, #priorityexpose#, #startterm#, #endterm#, #applycareer#, #applynewcomer#, #applyintern#, #judgemen#, #contents#, #paperpasser#, #interviewpasser#, #finalpasser#)
+	</insert>
+	
+</sqlMap>

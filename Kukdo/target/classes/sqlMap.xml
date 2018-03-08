@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    
+    <sqlMap namespace="home">
+    
+    	<typeAlias alias="bener" type="com.Kukdoadmin.model.mainBener"/>
+    	<typeAlias alias="Popup" type="com.Kukdoadmin.model.Popup"/>
+    	<typeAlias alias="enotice" type="com.Kukdoadmin.model.Etronotice"/>
+    	<typeAlias alias="manager" type="com.Kukdoadmin.model.Manager"/>
+    	<typeAlias alias="langtest" type="com.Kukdoadmin.model.Langtest"/>
+    	<typeAlias alias="hire" type="com.Kukdoadmin.model.Hire"/>
+    	<typeAlias alias="hireFAQ" type="com.Kukdoadmin.model.HireFAQ"/>
+    	<typeAlias alias="news" type="com.Kukdoadmin.model.News"/>
+    	<typeAlias alias="pr" type="com.Kukdoadmin.model.PR"/>
+    	<typeAlias alias="kdointview" type="com.Kukdoadmin.model.KdoInterview"/>
+    	<typeAlias alias="admin" type="com.Kukdoadmin.model.Admin"/>
+    	<typeAlias alias="admin" type="com.Kukdoadmin.model.Evaluation"/>
+    	
+    </sqlMap>

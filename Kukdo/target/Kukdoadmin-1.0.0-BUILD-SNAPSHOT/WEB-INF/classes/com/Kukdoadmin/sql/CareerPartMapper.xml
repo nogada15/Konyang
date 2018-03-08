@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="cp">
+
+	<typeAlias alias="CareerPartModel" 		type="com.Kukdoadmin.model.CareerPartModel" />
+
+	<select id="getAllCareerParts" resultClass="CareerPartModel">
+		SELECT pk AS pk, apk AS apk, joinyear1 AS joinyear1, joinmonth1 AS joinmonth1, resignyear1 AS resignyear1, resignmonth1 AS resignmonth1, company1 AS company1, depart1 AS depart1, work1 AS work1, level1 AS level1, joinyear2 AS joinyear2, joinmonth2 AS joinmonth2, resignyear2 AS resignyear2, resignmonth2 AS resignmonth2, company2 AS company2, depart2 AS depart2, work2 AS work2, level2 AS level2 FROM careerpart
+	</select>
+	
+	<select id="getCareerPart" resultClass="CareerPartModel">
+		SELECT apk AS apk, joinyear1 AS joinyear1, joinmonth1 AS joinmonth1, resignyear1 AS resignyear1, resignmonth1 AS resignmonth1, company1 AS company1, depart1 AS depart1, work1 AS work1, level1 AS level1, joinyear2 AS joinyear2, joinmonth2 AS joinmonth2, resignyear2 AS resignyear2, resignmonth2 AS resignmonth2, company2 AS company2, depart2 AS depart2, work2 AS work2, level2 AS level2 FROM careerpart WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertCareerPart" parameterClass="CareerPartModel">
+		INSERT INTO careerpart (pk, apk, joinyear1, joinmonth1, resignyear1, resignmonth1, company1, depart1, work1, level1, joinyear2, joinmonth2, resignyear2, resignmonth2, company2, depart2, work2, level2) VALUES (#pk#, #apk#, #joinyear1#, #joinmonth1#, #resignyear1#, #resignmonth1#, #company1#, #depart1#, #work1#, #level1#, #joinyear2#, #joinmonth2#, #resignyear2#, #resignmonth2#, #company2#, #depart2#, #work2#, #level2#)
+	</insert>
+	
+	<update id="updateCareerPart">
+		UPDATE careerpart 
+		set
+			joinyear1 = #joinyear1#,
+			joinmonth1 = #joinmonth1#,
+			resignyear1 = #resignyear1#,
+			resignmonth1 = #resignmonth1#,
+			company1 = #company1#,
+			depart1 = #depart1#,
+			work1 = #work1#,
+			level1 = #level1#,
+			joinyear2 = #joinyear2#,
+			joinmonth2 = #joinmonth2#,
+			resignyear2 = #resignyear2#,
+			resignmonth2 = #resignmonth2#,
+			company2 = #company2#,
+			depart2 = #depart2#,
+			work2 = #work2#,
+			level2 = #level2#
+		where
+			pk = #pk#
+			
+	</update>
+	
+	<delete id="CareerPartDel" parameterClass="CareerPartModel">
+    	delete from careerpart 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

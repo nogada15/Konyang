@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="mm">
+
+	<typeAlias alias="Military" 		type="com.Kukdoadmin.model.Military" />
+
+	<select id="getAllMilitarys" resultClass="Military">
+		SELECT pk AS pk, apk AS apk, startyearm AS startyearm, startmonthm AS startmonthm, startdaym AS startdaym, endyearm AS endyearm, endmonthm AS endmonthm, enddaym AS enddaym, military AS military, militarypart AS militarypart, militaryver AS militaryver, militarylevel AS militarylevel, reason AS reason FROM military
+	</select>
+	
+	<select id="getMilitary" resultClass="Military">
+		SELECT apk AS apk, startyearm AS startyearm, startmonthm AS startmonthm, startdaym AS startdaym, endyearm AS endyearm, endmonthm AS endmonthm, enddaym AS enddaym, military AS military, militarypart AS militarypart, militaryver AS militaryver, militarylevel AS militarylevel, reason AS reason FROM military WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertMilitary" parameterClass="Military">
+		INSERT INTO military (pk, apk, startyearm, startmonthm, startdaym, endyearm, endmonthm, enddaym, military, militarypart, militaryver, militarylevel, reason) VALUES (#pk#, #apk#, #startyearm#, #startmonthm#, #startdaym#, #endyearm#, #endmonthm#, #enddaym#, #military#, #militarypart#, #militaryver#, #militarylevel#, #reason#)
+	</insert>
+	
+	<update id="updateMilitary">
+		UPDATE military
+		set
+			pk = #pk#,
+			apk = #apk#,
+			startyearm = #startyearm#,
+			startmonthm = #startmonthm#,
+			startdaym = #startdaym#,
+			endyearm = #endyearm#,
+			endmonthm = #endmonthm#,
+			enddaym = #enddaym#,
+			military = #military#,
+			militarypart = #militarypart#,
+			militaryver = #militaryver#,
+			militarylevel = #militarylevel#,
+			reason = #reason#
+		WHERE
+			pk = #pk#
+	</update>
+	
+	<delete id="MilitaryDel" parameterClass="Military">
+    	delete from military 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

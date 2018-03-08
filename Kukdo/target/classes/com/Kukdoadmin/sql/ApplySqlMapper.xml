@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="apply">
+
+	<typeAlias alias="ApplyModel" type="com.Kukdoadmin.model.ApplyModel" />
+	<typeAlias alias="ApplyCareer" type="com.Kukdoadmin.model.ApplyCareer" />
+	<typeAlias alias="ApplyIntern" type="com.Kukdoadmin.model.ApplyIntern" />
+	<typeAlias alias="ApplyNewComer" type="com.Kukdoadmin.model.ApplyNewComer" />
+	
+	<select id="getAllApplycareer" resultClass="ApplyCareer">
+		SELECT career AS
+		career FROM applycareer
+	</select>
+
+	<insert id="insertApplycareer" parameterClass="ApplyModel">
+		INSERT INTO
+		applycareer (career) VALUES (#career#)
+	</insert>
+
+	<select id="getAllApplynewcomer" resultClass="ApplyNewComer">
+		SELECT newcomer AS
+		newcomer FROM applynewcomer
+	</select>
+
+	<insert id="insertApplynewcomer" parameterClass="ApplyModel">
+		INSERT INTO
+		applynewcomer (newcomer) VALUES (#newcomer#)
+	</insert>
+
+	<select id="getAllApplyintern" resultClass="ApplyIntern">
+		SELECT intern AS
+		intern FROM applyintern
+	</select>
+
+	<insert id="insertApplyintern" parameterClass="ApplyModel">
+		INSERT INTO
+		applyintern (intern) VALUES (#intern#)
+	</insert>
+	<!-- <select id="getAllApplyall" resultClass="ApplyModel"> SELECT intern 
+		AS intern FROM applyintern </select> -->
+
+
+
+</sqlMap>

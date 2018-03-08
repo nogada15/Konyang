@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="langtest">
+    <typeAlias alias="langtest" type="com.Kukdoadmin.model.Langtest"/>
+    
+    <select id="langtestList" resultClass="langtest" parameterClass="langtest">
+    	select * from langtest_board
+    </select>
+    
+    <select id="langtestListone" resultClass="langtest" parameterClass="langtest">
+    	select * from langtest_board where bId=#bId#
+    </select>
+    
+     <select id="langtestListserchLang" resultClass="langtest" parameterClass="langtest">
+    	select * from langtest_board 
+    	 WHERE bLang like '%' + #keyword# + '%'
+    </select>
+    
+     <select id="langtestListserchTestName" resultClass="langtest" parameterClass="langtest">
+    	select * from langtest_board 
+    	 WHERE bTestname like '%' + #keyword# + '%'
+    </select>
+    
+    <insert id="lnagtestInsert" parameterClass="langtest">
+    	insert into langtest_board (
+    		bLang,
+    		bTestname,
+    		bExposure
+    	) values (
+    		#bLang#,
+    		#bTestname#,
+    		#bExposure#
+    	)
+    
+    </insert>
+    
+    <update id="lnagtestModify" parameterClass="langtest">
+    	update langtest_board
+    	set 
+    		bLang = #bLang#,
+    		bTestname = #bTestname#,
+    		bExposure = #bExposure#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    <delete id="langtestDelete" parameterClass="langtest">
+    	delete from langtest_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    
+    </sqlMap>

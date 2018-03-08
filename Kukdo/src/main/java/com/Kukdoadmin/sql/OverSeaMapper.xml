@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ovs">
+
+	<typeAlias alias="OverSea" 		type="com.Kukdoadmin.model.OverSea" />
+
+	<select id="getAllOverSeas" resultClass="OverSea">
+		SELECT pk AS pk, apk AS apk, nation1 AS nation1, agency1 AS agency1, startyear1 AS startyear1, startmonth1 AS startmonth1, startday1 AS startday1, endyear1 AS endyear1, endmonth1 AS endmonth1, endday1 AS endday1, contents1 AS contents1, nation2 AS nation2, agency2 AS agency2, startyear2 AS startyear2, startmonth2 AS startmonth2, startday2 AS startday2, endyear2 AS endyear2, endmonth2 AS endmonth2, endday2 AS endday2, contents2 AS contents2, nation3 AS nation3, agency3 AS agency3, startyear3 AS startyear3, startmonth3 AS startmonth3, startday3 AS startday3, endyear3 AS endyear3, endmonth3 AS endmonth3, endday3 AS endday3, contents3 AS contents3 FROM oversea
+	</select>
+	
+	<select id="getOverSea" resultClass="OverSea">
+		SELECT apk AS apk, nation1 AS nation1, agency1 AS agency1, startyear1 AS startyear1, startmonth1 AS startmonth1, startday1 AS startday1, endyear1 AS endyear1, endmonth1 AS endmonth1, endday1 AS endday1, contents1 AS contents1, nation2 AS nation2, agency2 AS agency2, startyear2 AS startyear2, startmonth2 AS startmonth2, startday2 AS startday2, endyear2 AS endyear2, endmonth2 AS endmonth2, endday2 AS endday2, contents2 AS contents2, nation3 AS nation3, agency3 AS agency3, startyear3 AS startyear3, startmonth3 AS startmonth3, startday3 AS startday3, endyear3 AS endyear3, endmonth3 AS endmonth3, endday3 AS endday3, contents3 AS contents3 FROM oversea WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertOverSea" parameterClass="OverSea">
+		INSERT INTO oversea (pk, apk, nation1, agency1, startyear1, startmonth1, startday1, endyear1, endmonth1, endday1, contents1, nation2, agency2, startyear2, startmonth2, startday2, endyear2, endmonth2, endday2, contents2, nation3, agency3, startyear3, startmonth3, startday3, endyear3, endmonth3, endday3, contents3) VALUES (#pk#, #apk#, #nation1#, #agency1#, #startyear1#, #startmonth1#, #startday1#, #endyear1#, #endmonth1#, #endday1#, #contents1#, #nation2#, #agency2#, #startyear2#, #startmonth2#, #startday2#, #endyear2#, #endmonth2#, #endday2#, #contents2#, #nation3#, #agency3#, #startyear3#, #startmonth3#, #startday3#, #endyear3#, #endmonth3#, #endday3#, #contents3#)
+	</insert>
+	
+	<update id="updateOverSea">
+		UPDATE oversea
+		set
+		pk = #pk#,
+		apk = #apk#,
+		nation1 = #nation1#,
+		agency1 = #agency1#,
+		startyear1 = #startyear1#,
+		startmonth1 = #startmonth1#,
+		startday1 = #startday1#,
+		endyear1 = #endyear1#,
+		endmonth1 = #endmonth1#,
+		endday1 = #endday1#,
+		contents1 = #contents1#,
+		nation2 = #nation2#,
+		agency2 = #agency2#,
+		startyear2 = #startyear2#,
+		startmonth2 = #startmonth2#,
+		startday2 = #startday2#,
+		endyear2 = #endyear2#,
+		endmonth2 = #endmonth2#,
+		endday2 = #endday2#,
+		contents2 = #contents2#,
+		nation3 = #nation3#,
+		agency3 = #agency3#,
+		startyear3 = #startyear3#,
+		startmonth3 = #startmonth3#,
+		startday3 = #startday3#,
+		endyear3 = #endyear3#,
+		endmonth3 = #endmonth3#,
+		endday3 = #endday3#,
+		contents3 = #contents3#
+	WHERE
+		pk = #pk#
+	</update>
+	
+	<delete id="OverSeaDel" parameterClass="OverSea">
+    	delete from oversea 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

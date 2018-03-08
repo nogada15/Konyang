@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="regmake2">
+
+	<typeAlias alias="RegMakeModel2" 		type="com.Kukdoadmin.model.RegMakeModel2" />
+
+	<select id="getAllRegMake2s" resultClass="RegMakeModel2">
+		SELECT pk AS pk, birthyear AS birthyear, birthmonth AS birthmonth, birthday AS birthday, birthdetail AS birthdetail, nowaddressnum AS nowaddressnum, nowaddress AS nowaddress, nowrestaddress AS nowrestaddress, height AS height, weight AS weight, hobby AS hobby, hopework AS hopework, hopeincome AS hopeincome, faith AS faith, hopelevel AS hopelevel FROM regmakedetail
+	</select>
+	
+	<select id="getRegMake2" resultClass="RegMakeModel2">
+		SELECT birthyear AS birthyear, birthmonth AS birthmonth, birthday AS birthday, birthdetail AS birthdetail, nowaddressnum AS nowaddressnum, nowaddress AS nowaddress, nowrestaddress AS nowrestaddress, height AS height, weight AS weight, hobby AS hobby, hopework AS hopework, hopeincome AS hopeincome, faith AS faith, hopelevel AS hopelevel FROM regmakedetail WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertRegMake2" parameterClass="RegMakeModel2">
+		INSERT INTO regmakedetail (pk, apk, birthyear, birthmonth, birthday, birthdetail, nowaddressnum, nowaddress, nowrestaddress, height, weight, hobby, hopework, hopeincome, faith, hopelevel) VALUES (#pk#, #apk#, #birthyear#, #birthmonth#, #birthday#, #birthdetail#, #nowaddressnum#, #nowaddress#, #nowrestaddress#, #height#, #weight#, #hobby#, #hopework#, #hopeincome#, #faith#, #hopelevel#)
+	</insert>
+
+	<update id="updateRegMake2">
+		UPDATE regmakedetail 
+		set
+			birthdetail = #birthdetail#,
+			hobby = #hobby#,
+			faith = #faith#,
+			hopework = #hopework#,
+			hopeincome = #hopeincome#,
+			height = #height#,
+			weight = #weight#,
+			nowrestaddress = #nowrestaddress#,
+			nowaddressnum = #nowaddressnum#,
+			nowaddress = #nowaddress#,
+			hopelevel = #hopelevel#
+		where
+			pk = #pk#
+			
+	</update>
+	
+	<delete id="RegMakeModel2Del" parameterClass="RegMakeModel2">
+    	delete from regmakedetail 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

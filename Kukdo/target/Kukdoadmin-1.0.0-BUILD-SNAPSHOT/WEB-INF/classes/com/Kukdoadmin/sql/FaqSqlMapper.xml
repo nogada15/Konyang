@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="faq">
+
+	<typeAlias alias="FaqModel" 		type="com.Kukdoadmin.model.FaqModel" />
+
+	<select id="getAllFaqs" resultClass="FaqModel">
+		SELECT pk AS pk, title AS title, regDay AS regDay, exposeYN AS exposeYN, contents AS contents FROM faq
+	</select>
+	
+	<insert id="insertFaq" parameterClass="FaqModel">
+		INSERT INTO faq (title, regDay, exposeYN, contents) VALUES (#title#, #regDay#, #exposeYN#, #contents#)
+	</insert>
+	
+</sqlMap>

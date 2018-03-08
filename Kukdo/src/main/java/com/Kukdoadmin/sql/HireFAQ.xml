@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="hireFAQ">
+    
+    <typeAlias alias="hireFAQ" type="com.Kukdoadmin.model.HireFAQ" />
+    
+    <select id="hireFAQList" resultClass="hireFAQ" parameterClass="hireFAQ">
+    	select 
+    		*
+    	from 
+    		hireFAQ_board 
+    	
+    </select>
+    
+    <select id="hireFAQListone" resultClass="hireFAQ" parameterClass="hireFAQ">
+    	select 
+    		*
+    	from 
+    		hireFAQ_board 
+    	where
+    		bId=#bId#
+    	
+    </select>
+    
+    <select id="hireFAQListserch" resultClass="hireFAQ" parameterClass="hireFAQ">
+    	select 
+    		*
+    	from 
+    		hireFAQ_board 
+    	WHERE 
+    	bTitle like '%' + #keyword# + '%'
+    	
+    </select>
+    
+    <insert id="hireFAQInsert" parameterClass="hireFAQ">
+    	insert into 
+    		hireFAQ_board  (
+    			bTitle,
+    			bContent,
+    			bExposure
+	    			
+    		) values (
+    			#bTitle#, 
+    			#bContent#,
+    			#bExposure#
+    		)
+    </insert>
+    
+    <update id="hireFAQModify" parameterClass="hireFAQ">
+    	update hireFAQ_board
+    	set 
+    		bTitle = #bTitle#, 
+    		bContent = #bContent#,
+    		bExposure = #bExposure#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    <delete id="hireFAQDelete" parameterClass="hireFAQ">
+    	delete from hireFAQ_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    </sqlMap>

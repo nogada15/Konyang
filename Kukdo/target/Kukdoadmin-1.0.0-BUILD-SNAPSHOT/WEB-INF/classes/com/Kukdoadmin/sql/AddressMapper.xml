@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="address">
+
+	<typeAlias alias="Address" 		type="com.Kukdoadmin.model.Address" />
+
+	<select id="getAllAddress" resultClass="Address">
+		SELECT seq AS seq, addrzip1 AS addrzip1, addrzip2 AS addrzip2, addrsi AS addrsi, addrgu AS addrgu, addrdong AS addrdong, addrbunji AS addrbunji FROM address
+	</select>
+	
+	<select id="AddSearch" resultClass="Address">
+		SELECT * FROM address
+		WHERE seq like '%' + #search# + '%' OR
+		addrzip1 like '%' + #search# + '%' OR
+		addrzip2 like '%' + #search# + '%' OR
+		addrsi like '%' + #search# + '%' OR
+		addrgu like '%' + #search# + '%' OR
+		addrdong like '%' + #search# + '%' OR
+		addrbunji like '%' + #search# + '%'
+	</select>
+	
+	<insert id="insertAddress" parameterClass="Address">
+		INSERT INTO address (seq, addrzip1, addrzip2, addrsi, addrgu, addrdong, addrbunji) VALUES (#seq#, #addrzip1#, #addrzip2#, #addrsi#, #addrgu#, #addrdong#, #addrbunji#)
+	</insert>
+	
+</sqlMap>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="academic">
+
+	<typeAlias alias="Academic" 		type="com.Kukdoadmin.model.Academic" />
+
+	<select id="getAllAcademics" resultClass="Academic">
+		SELECT pk AS pk, apk AS apk ,name AS name,highyear AS highyear,highmonth AS highmonth, highschool AS highschool ,higharea AS higharea ,collegeyear AS collegeyear ,collegemonth AS collegemonth ,collegegraduateYN AS collegegraduateYN ,collegecode AS collegecode ,collegename AS collegename ,collegedepartcode AS collegedepartcode ,collegedepartname AS collegedepartname ,collegedepart AS collegedepart ,collegedaynight AS collegedaynight ,collegearea AS collegearea ,collegescore AS collegescore ,collegescorevalue AS collegescorevalue ,univyear AS univyear ,univmonth AS univmonth ,univgraduateyear AS univgraduateyear ,univgraduatemonth AS univgraduatemonth ,univgraduateYN AS univgraduateYN ,univcode AS univcode ,univname AS univname ,univafname AS univafname ,univafcode AS univafcode ,univdepartcode AS univdepartcode ,univdepartname AS univdepartname ,univdepart AS univdepart ,univdaynight AS univdaynight ,univmajorname AS univmajorname ,univetcYN AS univetcYN ,univetcname AS univetcname ,univarea AS univarea ,univscore AS univscore ,univscorevalue AS univscorevalue ,transyear AS transyear ,transmonth AS transmonth ,transgraduateyear AS transgraduateyear ,transgraduatemonth AS transgraduatemonth ,transgraduateYN AS transgraduateYN ,transcode AS transcode ,transname AS transname ,transafname AS transafname ,transafcode AS transafcode ,transdepartcode AS transdepartcode ,transdepartname AS transdepartname ,transdaynight AS transdaynight ,transmajorname AS transmajorname ,transetcYN AS transetcYN ,transetcname AS transetcname ,transarea AS transarea ,transscore AS transscore ,transscorevalue AS transscorevalue ,masteryear AS masteryear ,mastermonth AS mastermonth ,mastergraduateyear AS mastergraduateyear ,mastergraduatemonth AS mastergraduatemonth ,mastergraduateYN AS mastergraduateYN ,mastercode AS mastercode ,mastername AS mastername ,masterschoolname AS masterschoolname ,masterdepartcode AS masterdepartcode ,masterdepartname AS masterdepartname ,mastermajorcod AS mastermajorcod ,mastermajorname AS mastermajorname ,masterdaynight AS masterdaynight ,masterarea AS masterarea ,masterscore AS masterscore ,masterscorevalue AS masterscorevalue ,doctoryear AS doctoryear ,doctormonth AS doctormonth ,doctorgraduateyear AS doctorgraduateyear ,doctorgraduatemonth AS doctorgraduatemonth ,doctorgraduateYN AS doctorgraduateYN ,doctorschoolcode AS doctorschoolcode ,doctorcode AS doctorcode ,doctorname AS doctorname ,doctorschoolname AS doctorschoolname ,doctordepartcode AS doctordepartcode ,doctordepartname AS doctordepartname ,doctormajorcode AS doctormajorcode ,doctormajorname AS doctormajorname ,doctordaynight AS doctordaynight ,doctorarea AS doctorarea ,doctorscore AS doctorscore ,doctorscorevalue AS doctorscorevalue ,academic AS academic FROM academic
+	</select>
+	
+	<select id="getAcademic" resultClass="Academic">
+		SELECT * FROM academic WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertAcademic" parameterClass="Academic">
+		INSERT INTO academic (pk, apk, name, highyear, highmonth, highschool ,higharea ,collegeyear ,collegemonth ,collegegraduateYN ,collegecode ,collegename ,collegedepartcode ,collegedepartname ,collegedepart ,collegedaynight ,collegearea ,collegescore ,collegescorevalue ,univyear ,univmonth ,univgraduateyear ,univgraduatemonth ,univgraduateYN ,univcode ,univname ,univafname ,univafcode ,univdepartcode ,univdepartname ,univdepart ,univdaynight ,univmajorname ,univetcYN ,univetcname ,univarea ,univscore ,univscorevalue ,transyear ,transmonth ,transgraduateyear ,transgraduatemonth ,transgraduateYN ,transcode ,transname ,transafname ,transafcode ,transdepartcode ,transdepartname ,transdaynight ,transmajorname ,transetcYN ,transetcname ,transarea ,transscore ,transscorevalue ,masteryear ,mastermonth ,mastergraduateyear ,mastergraduatemonth ,mastergraduateYN ,mastercode ,mastername ,masterschoolname ,masterdepartcode ,masterdepartname ,mastermajorcod ,mastermajorname ,masterdaynight ,masterarea ,masterscore ,masterscorevalue ,doctoryear ,doctormonth ,doctorgraduateyear ,doctorgraduatemonth ,doctorgraduateYN ,doctorschoolcode ,doctorcode ,doctorname ,doctorschoolname ,doctordepartcode ,doctordepartname ,doctormajorcode ,doctormajorname ,doctordaynight ,doctorarea ,doctorscore ,doctorscorevalue ,academic
+) VALUES (#pk#, #apk#, #name#, #highyear#, #highmonth#, #highschool#, #higharea#, #collegeyear#, #collegemonth#, #collegegraduateYN#, #collegecode#, #collegename#, #collegedepartcode#, #collegedepartname#, #collegedepart#, #collegedaynight#, #collegearea#, #collegescore#, #collegescorevalue#, #univyear#, #univmonth#, #univgraduateyear#, #univgraduatemonth#, #univgraduateYN#, #univcode#, #univname# ,#univafname# ,#univafcode# ,#univdepartcode# ,#univdepartname# ,#univdepart# ,#univdaynight# ,#univmajorname# ,#univetcYN# ,#univetcname# ,#univarea# ,#univscore# ,#univscorevalue# ,#transyear# ,#transmonth# ,#transgraduateyear# ,#transgraduatemonth# ,#transgraduateYN# ,#transcode# ,#transname# ,#transafname# ,#transafcode# ,#transdepartcode# ,#transdepartname# ,#transdaynight# ,#transmajorname# ,#transetcYN# ,#transetcname# ,#transarea# ,#transscore# ,#transscorevalue# ,#masteryear# ,#mastermonth# ,#mastergraduateyear# ,#mastergraduatemonth# ,#mastergraduateYN# ,#mastercode# ,#mastername# ,#masterschoolname# ,#masterdepartcode# ,#masterdepartname# ,#mastermajorcod# ,#mastermajorname# ,#masterdaynight# ,#masterarea# ,#masterscore# ,#masterscorevalue# ,#doctoryear# ,#doctormonth# ,#doctorgraduateyear# ,#doctorgraduatemonth# ,#doctorgraduateYN# ,#doctorschoolcode# ,#doctorcode# ,#doctorname# ,#doctorschoolname# ,#doctordepartcode# ,#doctordepartname# ,#doctormajorcode#, #doctormajorname#, #doctordaynight#, #doctorarea#, #doctorscore#, #doctorscorevalue#, #academic#)
+	</insert>
+	
+	<update id="updateAcademic">
+		update academic
+    	set 
+			pk = #pk#,
+			apk = #apk#,
+			name = #name#,
+			highyear = #highyear#,
+			highmonth = #highmonth#,
+			highschool = #highschool#,
+			higharea = #higharea#,
+			collegeyear = #collegeyear#,
+			collegemonth = #collegemonth#,
+			collegegraduateYN = #collegegraduateYN#,
+			collegecode = #collegecode#,
+			collegename = #collegename#,
+			collegedepartcode = #collegedepartcode#,
+			collegedepartname = #collegedepartname#,
+			collegedepart = #collegedepart#,
+			collegedaynight = #collegedaynight#,
+			collegearea = #collegearea#,
+			collegescore = #collegescore#,
+			collegescorevalue = #collegescorevalue#,
+			univyear = #univyear#,
+			univmonth = #univmonth#,
+			univgraduateyear = #univgraduateyear#,
+			univgraduatemonth = #univgraduatemonth#,
+			univgraduateYN = #univgraduateYN#,
+			univcode = #univcode#,
+			univname = #univname#,
+			univafname = #univafname#,
+			univafcode = #univafcode#,
+			univdepartcode = #univdepartcode#,
+			univdepartname = #univdepartname#,
+			univdepart = #univdepart#,
+			univdaynight = #univdaynight#,
+			univmajorname = #univmajorname#,
+			univetcYN = #univetcYN#,
+			univetcname = #univetcname#,
+			univarea = #univarea#,
+			univscore = #univscore#,
+			univscorevalue = #univscorevalue#,
+			transyear = #transyear#,
+			transmonth = #transmonth#,
+			transgraduateyear = #transgraduateyear#,
+			transgraduatemonth = #transgraduatemonth#,
+			transgraduateYN = #transgraduateYN#,
+			transcode = #transcode#,
+			transname = #transname#,
+			transafname = #transafname#,
+			transafcode = #transafcode#,
+			transdepartcode = #transdepartcode#,
+			transdepartname = #transdepartname#,
+			transdaynight = #transdaynight#,
+			transmajorname = #transmajorname#,
+			transetcYN = #transetcYN#,
+			transetcname = #transetcname#,
+			transarea = #transarea#,
+			transscore = #transscore#,
+			transscorevalue = #transscorevalue#,
+			masteryear = #masteryear#,
+			mastermonth = #mastermonth#,
+			mastergraduateyear = #mastergraduateyear#,
+			mastergraduatemonth = #mastergraduatemonth#,
+			mastergraduateYN = #mastergraduateYN#,
+			mastercode = #mastercode#,
+			mastername = #mastername#,
+			masterschoolname = #masterschoolname#,
+			masterdepartcode = #masterdepartcode#,
+			masterdepartname = #masterdepartname#,
+			mastermajorcod = #mastermajorcod#,
+			mastermajorname = #mastermajorname#,
+			masterdaynight = #masterdaynight#,
+			masterarea = #masterarea#,
+			masterscore = #masterscore#,
+			masterscorevalue = #masterscorevalue#,
+			doctoryear = #doctoryear#,
+			doctormonth = #doctormonth#,
+			doctorgraduateyear = #doctorgraduateyear#,
+			doctorgraduatemonth = #doctorgraduatemonth#,
+			doctorgraduateYN = #doctorgraduateYN#,
+			doctorschoolcode = #doctorschoolcode#,
+			doctorcode = #doctorcode#,
+			doctorname = #doctorname#,
+			doctorschoolname = #doctorschoolname#,
+			doctordepartcode = #doctordepartcode#,
+			doctordepartname = #doctordepartname#,
+			doctormajorcode = #doctormajorcode#,
+			doctormajorname = #doctormajorname#,
+			doctordaynight = #doctordaynight#,
+			doctorarea = #doctorarea#,
+			doctorscore = #doctorscore#,
+			doctorscorevalue = #doctorscorevalue#,
+			academic = #academic#,
+			collegeendyear = #collegeendyear#,
+			collegeendmonth = #collegeendmonth#,
+			univendyear = #univendyear#,
+			univendmonth = #univendmonth#,
+			transendyear = #transendyear#,
+			transendmonth = #transendmonth#,
+			masterendyear = #masterendyear#,
+			masterendmonth = #masterendmonth#,
+			doctorendyear = #doctorendyear#,
+			doctorendmonth = #doctorendmonth#
+    	where
+    		pk = #pk#	
+    		
+	</update>
+	
+	<delete id="AcademicDel" parameterClass="Academic">
+    	delete from academic 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="regmake">
+
+	<typeAlias alias="RegMakeModel" 		type="com.Kukdoadmin.model.RegMakeModel" />
+
+	<select id="getAllRegMakes" resultClass="RegMakeModel">
+		SELECT pk AS pk, apk AS apk ,name AS name, china AS china, eng AS eng, bohunYN AS bohunYN, bohunnum AS bohunnum, disableYN AS disableYN, disablenum AS disablenum, marry AS marry, email AS email, hp AS hp, phone AS phone, address AS address, addressnum AS addressnum, restaddress AS restaddress, pic As pic, add1 AS add1, add2 AS add2, regDay AS regDay FROM regmake
+	</select>
+	
+	<select id="getRegMake" resultClass="RegMakeModel">
+		SELECT apk AS apk ,name AS name, china AS china, eng AS eng, bohunYN AS bohunYN, bohunnum AS bohunnum, disableYN AS disableYN, disablenum AS disablenum, marry AS marry, email AS email, hp AS hp, phone AS phone, address AS address, addressnum AS addressnum, restaddress AS restaddress, pic As pic, add1 AS add1, add2 AS add2, regDay AS regDay FROM regmake WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertRegMake" parameterClass="RegMakeModel">
+		INSERT INTO regmake (apk, name, china, eng, bohunYN, bohunnum, disableYN, disablenum, marry, email, hp, phone, address, addressnum, restaddress, pic, add1, add2, regDay) VALUES (#apk#, #name#, #china#, #eng#, #bohunYN#, #bohunnum#, #disableYN#, #disablenum#, #marry#, #email#, #hp#, #phone#, #address#, #addressnum#, #restaddress#, #pic#, #add1#, #add2#, #regDay#)
+	</insert>
+	
+	<select id="getPk" resultClass="RegMakeModel">
+		SELECT pk
+		FROM regmake
+		where
+		pk=(select max(pk) from regmake)
+		
+	</select>
+	
+	<update id="updateRegMake">
+		UPDATE regmake 
+		set
+			china = #china#,
+			eng = #eng#,
+			bohunYN = #bohunYN#,
+			bohunnum = #bohunnum#,
+			disableYN = #disableYN#,
+			disablenum = #disablenum#,
+			marry = #marry#,
+			hp = #hp#,
+			phone = #phone#,
+			address = #address#,
+			addressnum = #addressnum#,
+			restaddress = #restaddress#,
+			pic = #pic#
+		where
+			pk = #pk#
+			
+	</update>
+	
+	<delete id="RegMakeModelDel" parameterClass="RegMakeModel">
+    	delete from regmake 
+    	where 
+    		pk = #pk#
+    </delete>
+
+</sqlMap>

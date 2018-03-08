@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="popup">
+    
+    <typeAlias alias="popup" type="com.Kukdoadmin.model.Popup" />
+    
+    <select id="popupList" resultClass="popup" parameterClass="popup">
+    	select 
+    		*
+    	from 
+    		popup_board 
+    	
+    </select>
+    
+    <select id="popupListone" resultClass="popup" parameterClass="popup">
+    	select 
+    		*
+    	from 
+    		popup_board
+    	where
+    		bId=#bId#
+    	
+    </select>
+    
+    <select id="popupListserch" resultClass="popup" parameterClass="popup">
+    	select 
+    		*
+    	from 
+    		popup_board
+    		
+            WHERE bTitle like '%' + #keyword# + '%'
+            and bSite like '%' + #searchOption# + '%'
+    </select>
+	
+    
+    <insert id="popupInsert" parameterClass="popup">
+    	insert into 
+    		popup_board  (
+    			bSite,
+    			bTitle,
+    			bStartdate,
+    			bEnddate,
+    			bScroll,
+    			bLpoint,
+    			bTpoint,
+    			bWsize,
+    			bHsize,
+    			bLink,
+    			bPopup,
+    			bExposure,
+	    		bContent 
+	    			
+    		) values (
+    			#bSite#, 
+    			#bTitle#, 
+    			#bStartdate#, 
+    			#bEnddate#, 
+    			#bScroll#, 
+    			#bLpoint#,
+    			#bTpoint#,
+    			#bWsize#,
+    			#bHsize#,
+    			#bLink#,
+    			#bPopup#,
+    			#bExposure#,
+    			#bContent#
+    		)
+    </insert>
+    
+    <update id="popupModify" parameterClass="popup">
+    	update popup_board
+    	set 
+    		bSite = #bSite#, 
+    		bTitle = #bTitle#, 
+    		bStartdate = #bStartdate#, 
+    		bEnddate = #bEnddate#, 
+   			bScroll = #bScroll#, 
+   			bLpoint = #bLpoint#,
+   			bTpoint = #bTpoint#,
+   			bWsize = #bWsize#,
+   			bHsize = #bHsize#,
+    		bLink = #bLink#,
+    		bPopup = #bPopup#,
+    		bExposure = #bExposure#,
+    		bContent = #bContent#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    <delete id="popupDelete" parameterClass="popup">
+    	delete from popup_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    </sqlMap>

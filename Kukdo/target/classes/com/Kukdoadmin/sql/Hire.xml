@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="hire">
+    
+    <typeAlias alias="hire" type="com.Kukdoadmin.model.Hire" />
+    
+    <select id="hireList" resultClass="hire" parameterClass="hire">
+    	select 
+    		*
+    	from 
+    		hire_board 
+    	
+    </select>
+    
+    <select id="hireListone" resultClass="hire" parameterClass="hire">
+    	select 
+    		*
+    	from 
+    		hire_board 
+    	where
+    		bId=#bId#
+    	
+    </select>
+    
+    <select id="hireListserch" resultClass="hire" parameterClass="hire">
+    	select 
+    		*
+    	from 
+    		hire_board 
+    	WHERE 
+    	bTitle like '%' + #keyword# + '%'
+        and bField like '%' + #searchOption# + '%'
+    	
+    </select>
+    
+    <insert id="hireInsert" parameterClass="hire">
+    	insert into 
+    		hire_board  (
+    			bTitle,
+    			bCondition,
+    			bExposure,
+    			bExposurein,
+    			bStartdate,
+    			bEnddate,
+    			bEverydate,
+    			applycareer,
+    			applynewcomer,
+    			applyintern,
+    			bNum,
+    			bContent,
+    			bDocument,
+    			bDocumentn,
+    			bInterview,
+    			bInterviewn,
+    			bPass,
+    			bField
+	    			
+    		) values (
+    			#bTitle#, 
+    			#bCondition#, 
+    			#bExposure#, 
+    			#bExposurein#, 
+    			#bStartdate#, 
+    			#bEnddate#,
+    			#bEverydate#,
+    			#applycareer#,
+    			#applynewcomer#,
+    			#applyintern#,
+    			#bNum#,
+    			#bContent#,
+    			#bDocument#,
+    			#bDocumentn#,
+    			#bInterview#,
+    			#bInterviewn#,
+    			#bPass#,
+    			#bField#
+    		)
+    </insert>
+    
+    <update id="hireModify" parameterClass="hire">
+    	update hire_board
+    	set 
+    		bTitle = #bTitle#, 
+    		bCondition = #bCondition#, 
+    		bExposure = #bExposure#, 
+    		bExposurein = #bExposurein#,
+    		bStartdate = #bStartdate#,
+    		bEnddate = #bEnddate#,
+    		bEverydate = #bEverydate#,
+    		applycareer = #applycareer#,
+    		applynewcomer = #applynewcomer#,
+    		applyintern = #applyintern#,
+    		bNum = #bNum#,
+    		bContent = #bContent#,
+    		bDocument = #bDocument#,
+    		bDocumentn = #bDocumentn#,
+    		bInterview = #bInterview#,
+    		bInterviewn = #bInterviewn#,
+    		bPass = #bPass#,
+    		bField = #bField#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    <delete id="hireDelete" parameterClass="hire">
+    	delete from hire_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    </sqlMap>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="fm">
+
+	<typeAlias alias="Family" 		type="com.Kukdoadmin.model.Family" />
+
+	<select id="getAllFamilys" resultClass="Family">
+		SELECT pk AS pk, apk AS apk, family1 AS family1, name1 AS name1, age1 AS age1, education1 AS education1, job1 AS job1, jobname1 AS jobname1, live1 AS live1, family2 AS family2, name2 AS name2, age2 AS age2, education2 AS education2, job2 AS job2, jobname2 AS jobname2, live2 AS live2, family3 AS family3, name3 AS name3, age3 AS age3, education3 AS education3, job3 AS job3, jobname3 AS jobname3, live3 AS live3, family4 AS family4, name4 AS name4, age4 AS age4, education4 AS education4, job4 AS job4, jobname4 AS jobname4, live4 AS live4, son AS son, daughter AS daughter, childYN AS childYN FROM family
+	</select>
+	
+	<select id="getFamily" resultClass="Family">
+		SELECT apk AS apk, family1 AS family1, name1 AS name1, age1 AS age1, education1 AS education1, job1 AS job1, jobname1 AS jobname1, live1 AS live1, family2 AS family2, name2 AS name2, age2 AS age2, education2 AS education2, job2 AS job2, jobname2 AS jobname2, live2 AS live2, family3 AS family3, name3 AS name3, age3 AS age3, education3 AS education3, job3 AS job3, jobname3 AS jobname3, live3 AS live3, family4 AS family4, name4 AS name4, age4 AS age4, education4 AS education4, job4 AS job4, jobname4 AS jobname4, live4 AS live4, son AS son, daughter AS daughter, childYN AS childYN FROM family WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertFamily" parameterClass="Family">
+		INSERT INTO family (pk, apk, family1, name1, age1, education1, job1, jobname1, live1, family2, name2, age2, education2, job2, jobname2, live2, family3, name3, age3, education3, job3, jobname3, live3, family4, name4, age4, education4, job4, jobname4, live4, son, daughter, childYN) VALUES (#pk#, #apk#, #family1#, #name1#, #age1#, #education1#, #job1#, #jobname1#, #live1#, #family2#, #name2#, #age2#, #education2#, #job2#, #jobname2#, #live2#, #family3#, #name3#, #age3#, #education3#, #job3#, #jobname3#, #live3#, #family4#, #name4#, #age4#, #education4#, #job4#, #jobname4#, #live4#, #son#, #daughter#, #childYN#)
+	</insert>
+	
+	<update id="updateFamily"> 
+		UPDATE family 
+		set
+			apk = #apk#,
+			family1 = #family1#,
+			name1 = #name1#,
+			age1 = #age1#,
+			education1 = #education1#,
+			job1 = #job1#,
+			jobname1 = #jobname1#,
+			live1 = #live1#,
+			family2 = #family2#,
+			name2 = #name2#,
+			age2 = #age2#,
+			education2 = #education2#,
+			job2 = #job2#,
+			jobname2 = #jobname2#,
+			live2 = #live2#,
+			family3 = #family3#,
+			name3 = #name3#,
+			age3 = #age3#,
+			education3 = #education3#,
+			job3 = #job3#,
+			jobname3 = #jobname3#,
+			live3 = #live3#,
+			family4 = #family4#,
+			name4 = #name4#,
+			age4 = #age4#,
+			education4 = #education4#,
+			job4 = #job4#,
+			jobname4 = #jobname4#,
+			live4 = #live4#,
+			son = #son#,
+			daughter = #daughter#,
+			childYN = #childYN#
+		WHERE 
+			pk = #pk#
+	</update>
+	
+	<delete id="FamilyDel" parameterClass="Family">
+    	delete from family 
+    	where 
+    		pk = #pk#
+    </delete>
+	
+</sqlMap>

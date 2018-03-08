@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="bener">
+    <typeAlias alias="bener" type="com.Kukdoadmin.model.Bener"/>
+    
+     <update id="updateBener" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bTime = #bTime#
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="updateBener1" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bImage1 = #bImage1#,
+    		bImageo1 = #bImageo1#,
+    		bLink1 = #bLink1#,
+    		bExposure1 = #bExposure1#
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="updateBener2" parameterClass="bener">
+    	update bener_board
+    	set  
+    		bImage2 = #bImage2#,
+    		bImageo2 = #bImageo2#,
+    		bLink2 = #bLink2#,
+    		bExposure2 = #bExposure2#
+			
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="updateBener3" parameterClass="bener">
+    	update bener_board
+    	set 
+			bImage3 = #bImage3#, 
+			bImageo3 = #bImageo3#,
+			bLink3 = #bLink3#,
+			bExposure3 = #bExposure3#
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="updateBener4" parameterClass="bener">
+    	update bener_board
+    	set 
+			bImage4 = #bImage4#, 
+			bImageo4 = #bImageo4#,
+			bLink4 = #bLink4#,
+			bExposure4 = #bExposure4#
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="updateBener5" parameterClass="bener">
+    	update bener_board
+    	set  
+			bImage5 = #bImage5#, 
+			bImageo5 = #bImageo5#,
+			bLink5 = #bLink5#,
+			bExposure5 = #bExposure5#
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="updateBener6" parameterClass="bener">
+    	update bener_board
+    	set  
+			bImage6 = #bImage6#, 
+			bImageo6 = #bImageo6#,
+			bLink6 = #bLink6#,
+			bExposure6 = #bExposure6#
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+		
+	<select id="selectBener" resultClass="bener" parameterClass="bener">
+ 		select 
+ 			*
+ 			 from bener_board where bSite=#bSite#
+   </select>
+   
+   <update id="deleteBener1" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bImage1 = null,
+    		bImageo1 = null,
+    		bLink1 = null,
+    		bExposure1 = 'N'
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="deleteBener2" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bImage2 = null,
+    		bImageo2 = null,
+    		bLink2 = null,
+    		bExposure2 = 'N'
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="deleteBener3" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bImage3 = null,
+    		bImageo3 = null,
+    		bLink3 = null,
+    		bExposure3 = 'N'
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="deleteBener4" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bImage4 = null,
+    		bImageo4 = null,
+    		bLink4 = null,
+    		bExposure4 = 'N'
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="deleteBener5" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bImage5 = null,
+    		bImageo5 = null,
+    		bLink5 = null,
+    		bExposure5 = 'N'
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    <update id="deleteBener6" parameterClass="bener">
+    	update bener_board
+    	set 
+    		bImage6 = null,
+    		bImageo6 = null,
+    		bLink6 = null,
+    		bExposure6 = 'N'
+    		
+    	where
+    		bSite = #bSite#
+    	
+    </update>
+    
+    </sqlMap>

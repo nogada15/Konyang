@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="admin">
+
+ <typeAlias alias="admin" type="com.Kukdoadmin.model.Admin" />
+ <typeAlias alias="credential" type="com.Kukdoadmin.model.Credential" />
+ 
+ 
+   <select id="adminCheck" resultClass="admin" parameterClass="admin">
+        SELECT * FROM adminuser_board
+        WHERE buserId = #buserId# AND bPassword = #bPassword#
+    </select>
+    
+   <select id="adminView" resultClass="admin" parameterClass="credential">
+        SELECT 
+        	bMain,
+        	bInvestment,
+        	bHire,
+        	bNews,
+        	bKdolife,
+        	bTerms,
+        	bAdmin,
+        	bType
+        	
+         FROM adminuser_board
+        WHERE buserId = #userName#
+    </select>
+    
+ <select id="adminList" resultClass="admin" parameterClass="admin">
+ 	select * from adminuser_board where bType='A'
+    	
+ </select>
+ 
+ <select id="adminListone" resultClass="admin" parameterClass="admin">
+ 	select * from adminuser_board where bId=#bId# and bType='A'
+    	
+ </select>
+ 
+ <select id="adminListserchId" resultClass="admin" parameterClass="admin">
+ 	select * from adminuser_board 
+ 	WHERE buserId like '%' + #keyword# + '%'
+ 	and bType='A'
+    	
+ </select>
+ 
+ <select id="adminListserchName" resultClass="admin" parameterClass="admin">
+ 	select * from adminuser_board 
+ 	WHERE bName like '%' + #keyword# + '%'
+    	and bType='A'
+ </select>
+ 
+ <select id="adminListserchFeld" resultClass="admin" parameterClass="admin">
+ 	select * from adminuser_board 
+ 	WHERE bDepartment like '%' + #keyword# + '%'
+ 	and bType='A'
+    	
+ </select>
+ 
+ <insert id="adminInsert" parameterClass="admin">
+ 	insert into 
+    		adminuser_board ( 
+    			buserId, 
+    			bPassword, 
+    			bName,
+    			bDepartment,
+    			bEmail,
+    			bTnumber,
+    			bTbusniess,
+    			ENABLED,
+    			bMain,
+    			bInvestment,
+    			bHire,
+    			bNews,
+    			bKdolife,
+    			bTerms,
+    			bAdmin,
+    			bType
+    			
+    		) values ( 
+    			#buserId#, 
+    			#bPassword#, 
+    			#bName#,
+    			#bDepartment#,
+    			#bEmail#,
+    			#bTnumber#,
+    			#bTbusniess#,
+    			#ENABLED#,
+    			#bMain#,
+    			#bInvestment#,
+    			#bHire#,
+    			#bNews#,
+    			#bKdolife#,
+    			#bTerms#,
+    			#bAdmin#,
+    			#bType#
+    		)
+ 
+ </insert>
+ 
+ <update id="adminModify" parameterClass="admin">
+    	update adminuser_board
+    	set 
+    		buserId = #buserId#, 
+    		bPassword = #bPassword#, 
+    		bName = #bName#,
+    		bDepartment = #bDepartment#,
+   			bEmail = #bEmail#,
+    		bTnumber = #bTnumber#,
+    		bTbusniess = #bTbusniess#,
+    		ENABLED = #ENABLED#,
+    		bMain = #bMain#,
+    		bInvestment = #bInvestment#,
+   			bHire = #bHire#,
+   			bNews = #bNews#,
+    		bKdolife = #bKdolife#,
+    		bTerms = #bTerms#,
+    		bAdmin = #bAdmin#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    
+  <delete id="adminDelete" parameterClass="admin">
+    	delete from adminuser_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    
+ 
+ </sqlMap>

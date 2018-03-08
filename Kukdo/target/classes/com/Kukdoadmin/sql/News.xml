@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="news">
+    
+    <typeAlias alias="news" type="com.Kukdoadmin.model.News" />
+    
+    <select id="newsList" resultClass="news" parameterClass="news">
+    	select 
+    		*
+    	from 
+    		news_board 
+    	
+    </select>
+    
+    <select id="newsListone" resultClass="news" parameterClass="news">
+    	select 
+    		*
+    	from 
+    		news_board 
+    	where
+    		bId=#bId#
+    	
+    </select>
+    
+    <select id="newsListserch" resultClass="news" parameterClass="news">
+    	select 
+    		*
+    	from 
+    		news_board 
+    	WHERE 
+    	bTitle like '%' + #keyword# + '%'
+            and bSite like '%' + #searchOption# + '%'
+    	
+    </select>
+    
+    <insert id="newsInsert" parameterClass="news">
+    	insert into news_board  ( 
+    		bSite, 
+    		bDate, 
+    		bTitle, 
+    		bSimpContent, 
+    		bFile1, 
+    		bFile2, 
+    		bExposure, 
+    		bContent 
+    	) values (
+    		#bSite#, 
+    		#bDate#, 
+    		#bTitle#, 
+    		#bSimpContent#, 
+    		#bFile1#, 
+    		#bFile2#, 
+    		#bExposure#, 
+    		#bContent# 
+    )
+    
+    </insert>
+    
+    <update id="newsModify" parameterClass="news">
+    	update news_board
+    	set 
+    		bSite = #bSite#,
+    		bDate = #bDate#,
+    		bTitle = #bTitle#,
+    		bSimpContent = #bSimpContent#,
+    		bFile1 = #bFile1#,
+    		bFile2 = #bFile2#,
+    		bExposure = #bExposure#,
+    		bContent = #bContent#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    <delete id="newsDelete" parameterClass="news">
+    	delete from news_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    </sqlMap>

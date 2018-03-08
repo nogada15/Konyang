@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="liecense">
+
+	<typeAlias alias="LiecenseModel" 		type="com.Kukdoadmin.model.LiecenseModel" />
+
+	<select id="getAllLiecenses" resultClass="LiecenseModel">
+		SELECT pk AS pk, apk AS apk, name AS name, liecenseyear1 AS liecenseyear1, liecensemonth1 AS liecensemonth1, liecenseday1 AS liecenseday1, liecensecode1 AS liecensecode1, liecensename1 AS liecensename1, liecenseori1 AS liecenseori1, liecenseyear2 AS liecenseyear2, liecensemonth2 AS liecensemonth2, liecenseday2 AS liecenseday2, liecensecode2 AS liecensecode2, liecensename2 AS liecensename2, liecenseori2 AS liecenseori2, liecenseyear3 AS liecenseyear3, liecensemonth3 AS liecensemonth3, liecenseday3 AS ecenseday3, liecensecode3 AS liecensecode3, liecensename3 AS liecensename3, liecenseori3 AS liecenseori3, liecenseyear4 AS liecenseyear4, liecensemonth4 AS liecensemonth4, liecenseday4 AS liecenseday4, liecensecode4 AS liecensecode4, liecensename4 AS liecensename4, liecenseori4 AS liecenseori4, liecenseyear5 AS liecenseyear5, liecensemonth5 AS liecensemonth5, liecenseday5 AS liecenseday5, liecensecode5 AS liecensecode5, liecensename5 AS liecensename5, liecenseori5 AS liecenseori5, liecensenum1 AS liecensenum1, liecensenum2 AS liecensenum2, liecensenum3 AS liecensenum3, liecensenum4 AS liecensenum4, liecensenum5  AS liecensenum5 FROM liecense
+	</select>
+	
+	<select id="getLiecense" resultClass="LiecenseModel">
+		SELECT apk AS apk, name AS name, liecenseyear1 AS liecenseyear1, liecensemonth1 AS liecensemonth1, liecenseday1 AS liecenseday1, liecensecode1 AS liecensecode1, liecensename1 AS liecensename1, liecenseori1 AS liecenseori1, liecenseyear2 AS liecenseyear2, liecensemonth2 AS liecensemonth2, liecenseday2 AS liecenseday2, liecensecode2 AS liecensecode2, liecensename2 AS liecensename2, liecenseori2 AS liecenseori2, liecenseyear3 AS liecenseyear3, liecensemonth3 AS liecensemonth3, liecenseday3 AS ecenseday3, liecensecode3 AS liecensecode3, liecensename3 AS liecensename3, liecenseori3 AS liecenseori3, liecenseyear4 AS liecenseyear4, liecensemonth4 AS liecensemonth4, liecenseday4 AS liecenseday4, liecensecode4 AS liecensecode4, liecensename4 AS liecensename4, liecenseori4 AS liecenseori4, liecenseyear5 AS liecenseyear5, liecensemonth5 AS liecensemonth5, liecenseday5 AS liecenseday5, liecensecode5 AS liecensecode5, liecensename5 AS liecensename5, liecenseori5 AS liecenseori5, liecensenum1 AS liecensenum1, liecensenum2 AS liecensenum2, liecensenum3 AS liecensenum3, liecensenum4 AS liecensenum4, liecensenum5  AS liecensenum5 FROM liecense WHERE pk = #pk#
+	</select>
+	
+	<insert id="insertLiecense" parameterClass="LiecenseModel">
+		INSERT INTO liecense (pk, apk, name, liecenseyear1, liecensemonth1, liecenseday1, liecensecode1, liecensename1, liecenseori1, liecenseyear2, liecensemonth2, liecenseday2, liecensecode2, liecensename2, liecenseori2, liecenseyear3, liecensemonth3, liecenseday3, liecensecode3, liecensename3, liecenseori3, liecenseyear4, liecensemonth4, liecenseday4, liecensecode4, liecensename4, liecenseori4, liecenseyear5, liecensemonth5, liecenseday5, liecensecode5, liecensename5, liecenseori5, liecensenum1, liecensenum2, liecensenum3, liecensenum4, liecensenum5) VALUES (#pk#, #apk#, #name#, #liecenseyear1#, #liecensemonth1#, #liecenseday1#, #liecensecode1#, #liecensename1#, #liecenseori1#, #liecenseyear2#, #liecensemonth2#, #liecenseday2#, #liecensecode2#, #liecensename2#, #liecenseori2#, #liecenseyear3#, #liecensemonth3#, #liecenseday3#, #liecensecode3#, #liecensename3#, #liecenseori3#, #liecenseyear4#, #liecensemonth4#, #liecenseday4#, #liecensecode4#, #liecensename4#, #liecenseori4#, #liecenseyear5#, #liecensemonth5#, #liecenseday5#, #liecensecode5#, #liecensename5#, #liecenseori5#, #liecensenum1#, #liecensenum2#, #liecensenum3#, #liecensenum4#, #liecensenum5#)
+	</insert>
+	
+	<update id="updateLiecense">
+		UPDATE liecense 
+		set
+			pk = #pk#,
+			apk = #apk#,
+			name = #name#,
+			liecenseyear1 = #liecenseyear1#,
+			liecensemonth1 = #liecensemonth1#,
+			liecenseday1 = #liecenseday1#,
+			liecensecode1 = #liecensecode1#,
+			liecensename1 = #liecensename1#,
+			liecenseori1 = #liecenseori1#,
+			liecenseyear2 = #liecenseyear2#,
+			liecensemonth2 = #liecensemonth2#,
+			liecenseday2 = #liecenseday2#,
+			liecensecode2 = #liecensecode2#,
+			liecensename2 = #liecensename2#,
+			liecenseori2 = #liecenseori2#,
+			liecenseyear3 = #liecenseyear3#,
+			liecensemonth3 = #liecensemonth3#,
+			liecenseday3 = #liecenseday3#,
+			liecensecode3 = #liecensecode3#,
+			liecensename3 = #liecensename3#,
+			liecenseori3 = #liecenseori3#,
+			liecenseyear4 = #liecenseyear4#,
+			liecensemonth4 = #liecensemonth4#,
+			liecenseday4 = #liecenseday4#,
+			liecensecode4 = #liecensecode4#,
+			liecensename4 = #liecensename4#,
+			liecenseori4 = #liecenseori4#,
+			liecenseyear5 = #liecenseyear5#,
+			liecensemonth5 = #liecensemonth5#,
+			liecenseday5 = #liecenseday5#,
+			liecensecode5 = #liecensecode5#,
+			liecensename5 = #liecensename5#,
+			liecenseori5 = #liecenseori5#,
+			liecensenum1 = #liecensenum1#,
+			liecensenum2 = #liecensenum2#,
+			liecensenum3 = #liecensenum3#,
+			liecensenum4 = #liecensenum4#,
+			liecensenum5 = #liecensenum5#			
+		WHERE
+			pk = #pk#
+	
+	</update>
+	
+	<delete id="LiecenseDel" parameterClass="LiecenseModel">
+    	delete from liecense 
+    	where 
+    		pk = #pk#
+    </delete>
+    
+</sqlMap>

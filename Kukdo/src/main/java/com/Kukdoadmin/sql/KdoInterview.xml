@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+    <sqlMap namespace="kdointerview">
+    
+    <typeAlias alias="kdointview" type="com.Kukdoadmin.model.KdoInterview" />
+    
+    <select id="kdointviewList" resultClass="kdointview" parameterClass="kdointview">
+    	select 
+    		*
+    	from 
+    		kdointerview_board 
+    	
+    </select>
+    
+    <select id="kdointviewListone" resultClass="kdointview" parameterClass="kdointview">
+    	select 
+    		*
+    	from 
+    		kdointerview_board 
+    	where
+    		bId=#bId#
+    	
+    </select>
+    
+    <select id="kdointviewListserch" resultClass="kdointview" parameterClass="kdointview">
+    	select 
+    		*
+    	from 
+    		kdointerview_board 
+    	where
+    		bTitle like '%' + #keyword# + '%'
+    	
+    </select>
+    
+    <insert id="kdointviewInsert" parameterClass="kdointview">
+    	insert into kdointerview_board  (   
+    		bTitle, 
+    		bSimpContent, 
+    		bImage, 
+    		bExposure, 
+    		bContent
+    	) values (
+    		#bTitle#, 
+    		#bSimpContent#,  
+    		#bImage#, 
+    		#bExposure#, 
+    		#bContent#
+    	)
+    </insert>
+    
+    <update id="kdointviewModify" parameterClass="kdointview">
+    	update kdointerview_board
+    	set 
+    		bTitle = #bTitle#,
+    		bSimpContent = #bSimpContent#,
+    		bImage = #bImage#,
+    		bExposure = #bExposure#,
+    		bContent = #bContent#
+    	where
+    		bId = #bId#
+    	
+    </update>
+    
+    <delete id="kdointviewDelete" parameterClass="kdointview">
+    	delete from kdointerview_board 
+    	where 
+    		bId=#bId#
+    </delete>
+    </sqlMap>

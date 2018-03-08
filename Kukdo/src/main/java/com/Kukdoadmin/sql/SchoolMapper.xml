@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="school">
+
+	<typeAlias alias="School" 		type="com.Kukdoadmin.model.School" />
+
+	<select id="getAllSchool" resultClass="School">
+		SELECT * FROM school
+	</select>
+	
+	<select id="SchoolSearch" resultClass="School">
+		SELECT * FROM school
+		WHERE school like '%' + #schoolsearch# + '%'
+	</select>
+	
+	<insert id="insertSchool" parameterClass="School">
+		INSERT INTO school (school, area) VALUES (#school#, #area#)
+	</insert>
+	
+</sqlMap>
