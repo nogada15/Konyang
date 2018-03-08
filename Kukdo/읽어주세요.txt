@@ -1,6 +1,6 @@
 eclipse(oxygen)
 java jdk1.8.0_162
-spring 3.2.14.RELEASE(ÇÃ·¯±×ÀÎ »ç¿ësts 3.9.2)
+spring 3.2.14.RELEASE(í”ŒëŸ¬ê·¸ì¸ ì‚¬ìš©sts 3.9.2)
 mssql 2012 Express(sqljdbc_6.0)
 apache-maven-3.5.2
 apache-tomcat-9.0.2
@@ -10,23 +10,3 @@ sqljdbc_6.0
 mybatis-spring 1.3.1
 spring-jdbc 3.2.14
 
-<ÁøÇà>
-±â´ÉÀº adminº£³Ê µî·Ï(ÆÄÀÏ¾÷·Îµå ±¸Çöx)
-ÆË¾÷ ¸®½ºÆ® È®ÀÎ
-±îÁö µÇ¾ú½À´Ï´Ù.
-Àü¿¡ Çß´ø ÇÁ·ÎÁ§Æ®¿¡ µµ´ÞÇß´Ù°í º¸½Ã¸é µË´Ï´Ù.
-
-
-<Áú¹®>
- - drimiÀÚÃ¼¿¡ ±â´ÉÀÌ ³Ê¹« ¸¹¾Æ ÀÌÇØ°¡ ¾î·Æ½À´Ï´Ù....
-
- - ¸ÞÀÎº£³Ê¿¡ ÀÓ½Ã·Î µ¥ÀÌÅÍ¸¦ ³ÖÀ»¶§ °ªÀ» ÁÖ¾îµµ null·Î ÀÎ½ÄÀ» ÇÏ°í ÀÖ½À´Ï´Ù. ÀÌ°Å¶§¹®¿¡ ¸î½Ã°£Â° ÁøÇàÀ» ÇÏÁö ¸øÇÏ°í ÀÖ½À´Ï´Ù.
-
-
-
-±³¼ö´ÔÀÇ drimi´Â mybatis°ú°Å¹öÀüÀÎ ibatis±â¹ÝÀ¸·Î µÇ¾îÀÖ°í,spring ¹öÀüÀÌ 3.1¹öÀüÀ¸·Î.
-¸ÅÇÎ ºÎºÐ µîÀÇ ¼³Á¤ÀÌ 3.2¹öÀü°ú ´Ù¸£´Ù´Â°ÍÀ» ¾Ë°Ô µÇ¾î drimi¸¦Âü°íÇÏ¸ç ´Ù¸¥ °­ÁÂÀÇ µµ¿òÀ» ¹Þ¾Æ Á¦ÀÛÇÏ°í ÀÖ½À´Ï´Ù.
-
-ÀÌ °æ¿ì¿¡µµ ÇÁ·ÎÁ§Æ®¿¡ ¹®Á¦°¡ ÀÖ´Ù¸é ²À ¿¬¶ô ºÎÅ¹µå¸³´Ï´Ù.
-¾ÆÁ÷ ¸ð¸£´Â°Í Åõ¼ºÀÌ±â ¶§¹®¿¡ Á¤È®È÷ ¾î¶² ºÎºÐÀ» Â¤¾î¼­ ±Ã±ÝÇÑ Á¡À» Ã£¾Æ³»±â Èûµì´Ï´Ù.
-¾Ë¾Æ°¡¸é °¥¼ö·Ï ´õ ¸ð¸£´Â°Ô ¸¹¾ÆÁý´Ï´Ù.
